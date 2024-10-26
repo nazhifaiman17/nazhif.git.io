@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background-color: #ffe4e1;
+            border: 2px solid #c71585;
+            border-radius: 5px;
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .envelope::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 30px solid #c71585;
+            position: absolute;
+            top: -30px;
+            left: 0;
+        }
+        .question {
+            display: none;
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #c71585;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="envelope" onclick="openEnvelope()">
+        <h2>Love Letter ❤️</h2>
+        <p>Click to open</p>
+    </div>
+
+    <div class="question" id="question">
+        <p>Do you love me?</p>
+        <button class="button" id="yesButton" onclick="handleResponse(true)">Yes</button>
+        <button class="button" id="noButton" onclick="handleResponse(false)">No</button>
+        <p class="message" id="noMessage" style="display: none;">Kenapa No, Yes laa seng!</p>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            document.querySelector('.envelope').style.display = 'none';
+            document.getElementById('question').style.display = 'block';
+        }
+
+        function handleResponse(isYes) {
+            if (isYes) {
+                alert("Yeyyyy, I love youu so muchh senggg muahhh!");
+                window.location.href = "celebration.html"; // Redirect to a new page
+            } else {
+  
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
